@@ -4,6 +4,7 @@ import  Login  from './login/Login';
 import { Home } from './home';
 import { Register } from './register';
 import { Contact } from './contact';
+import './login/Login.css'
 
 
 
