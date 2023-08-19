@@ -1,0 +1,17 @@
+.username{
+    height:4;
+}
+.password{
+    height:5
+}
+.login{
+    width:80%;
+    background-color :blue;
+    font-size:16px;
+    padding:10px;
+    border-radius:12px;
+    border:blue
+}
+.cancel{
+    width:5
+}
