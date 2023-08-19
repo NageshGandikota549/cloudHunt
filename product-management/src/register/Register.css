@@ -1,0 +1,57 @@
+.main-register{
+    justify-content: center;
+
+}
+.head-part{
+    color:blueviolet
+}
+.email-field{
+    border:2px solid blueviolet
+}
+
+.username-field{    
+    border:2px solid blueviolet
+}
+.password-field{
+    border:2px solid blueviolet
+
+}
+.dob-field
+{
+    border:2px solid blueviolet
+ 
+}
+.age-field{
+    border:2px solid blueviolet
+
+}
+.email-label{
+    color:blueviolet
+}
+.username-label{
+    color:blueviolet
+}
+.password-label{
+    color:blueviolet
+}
+.dob-label{
+    color:blueviolet
+}
+.age-label{
+    color:blueviolet
+}
+
+.btn-submit{
+    color:black;
+    background-color:blueviolet;
+}
+.button-space{
+    display: inline-block; /* Make it inline but block-level for styling */
+    width: 20px; /* Adjust the width for the desired spacing */
+  }
+
+.btn-cancel{
+    color:black;
+    background-color:blueviolet;
+
+}
