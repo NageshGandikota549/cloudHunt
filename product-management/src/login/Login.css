@@ -15,3 +15,11 @@
 .cancel{
     width:5
 }
+
+.btn-section{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    margin-right: 10px;
+}
