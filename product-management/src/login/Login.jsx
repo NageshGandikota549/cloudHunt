@@ -44,7 +44,6 @@ export function Login() {
         <h2>Login</h2>
         <div>
           <button onClick={handleDisableButton}>{enableForm ? 'Disable' : 'Enable'}</button>
-          {/* condition?true:false */}
         </div>
 
         
@@ -80,8 +79,6 @@ export function Login() {
             <button disabled={!enableForm}   className='btn' type="submit" >Login</button>           
           </div>
         </form>
-        
-        {userDetails.username}--{userDetails.password}
       </center>
     </div>
   );
