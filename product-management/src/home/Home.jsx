@@ -6,6 +6,7 @@ const url = "https://fakestoreapi.com/products";
 export function Home() {
   const [products, setProducts] = useState([]);
   const [productId, setProductId] = useState(null);
+  const [categories, setCategories] = useState([]);
 
   const handleProductIdChange = (event) => {
     setProductId(event.target.value);
@@ -18,6 +19,15 @@ export function Home() {
         return response.json();
       })
       .then((data) => {
+        if (categories.length === 0) {
+          let categoryList = data.map((x) => x.category);
+
+          categoryList = categoryList.filter(
+            (x, idx) => categoryList.indexOf(x) === idx
+          );
+          setCategories(categoryList);
+        }
+
         const uData = Array.isArray(data) ? data : [data];
         setProducts(uData);
       });
@@ -45,6 +55,12 @@ export function Home() {
   return (
     <div>
       <input type="number" onChange={handleProductIdChange} />
+      <select>
+        {categories.map((x) => {
+          return <option value={x}>{x}</option>;
+        })}
+      </select>
+
       <table>
         <thead>
           <tr>
