@@ -1,0 +1,14 @@
+//React Hooks
+1.useState -- component level statemanagement purpose
+2.useEffect -- allows to perform side effects oin component, using this we can achive
+             can achive component lifecycle method (using useEffect Hooks)
+             componentDidMount 
+             componentDidUpdate
+             componentDidUnmount
+
+
+3.useMemo
+4.useCallback
+5.useRef
+
+
