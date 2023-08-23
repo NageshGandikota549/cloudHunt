@@ -1,9 +1,11 @@
 import {BrowserRouter, Route, Routes } from "react-router-dom";
 import { Navbar } from './navbar';
-import { Login } from './login';
+import  { Login }  from './login';
 import { Home } from './home';
 import { Register } from './register';
 import { Contact } from './contact';
+import './login/Login.css'
+
 
 
 export function App() {
