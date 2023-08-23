@@ -7,10 +7,14 @@ export function Home() {
   const [products, setProducts] = useState([]);
   const [productId, setProductId] = useState(null);
   const [categories, setCategories] = useState([]);
+  const[selectCategories,setselectCategories]=useState('')
 
   const handleProductIdChange = (event) => {
     setProductId(event.target.value);
   };
+  const handleCategorychange =(event)=>{
+    setselectCategories(event.target.value);
+  }
 
   const getProducts = (productId) => {
     const updatedURL = productId ? `${url}/${productId}` : url;
@@ -30,6 +34,8 @@ export function Home() {
 
         const uData = Array.isArray(data) ? data : [data];
         setProducts(uData);
+
+        
       });
   };
 
@@ -40,9 +46,9 @@ export function Home() {
 
   //Updating Phase
   useEffect(() => {
-    // if (productId > 0) {
+     if (productId > 0) {
     getProducts(productId);
-    // }
+     }
   }, [productId]);
 
   //Unmounting Phase
@@ -55,7 +61,8 @@ export function Home() {
   return (
     <div>
       <input type="number" onChange={handleProductIdChange} />
-      <select>
+      <select onChange={handleCategorychange} value ={selectCategories}>
+      <option value="">All Categories</option>
         {categories.map((x) => {
           return <option value={x}>{x}</option>;
         })}
@@ -71,7 +78,7 @@ export function Home() {
           </tr>
         </thead>
         <tbody>
-          {products.map((x) => {
+          {products.filter((product)=>selectCategories ? product.category === selectCategories : true).map((x) => {
             return (
               <tr key={x.id}>
                 <td>{x.id}</td>
