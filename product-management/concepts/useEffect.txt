@@ -1,0 +1,79 @@
+
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+
+//Mounting phase
+componentDidMount() {  
+
+const div = document.getElemetntbyId('some-div-id');
+div.addEventLister('onClick',()=>{
+})
+
+  }
+
+
+//Updating phase
+   static getDerivedStateFromProps(props, state) {
+    return {favoritecolor: props.favcol };
+  }
+
+//Unmounting phase
+  componentDidUnMount() {
+const div = document.getElemetntbyId('some-div-id');
+div.removeEventLister('onClick');
+}
+
+
+  render() {
+    return (
+      <h1>My Favorite Color is {this.state.favoritecolor}
+      <div id='some-did' onClick={}>
+      
+      </div>
+      
+      </h1>
+    );
+  }
+}
+
+
+
+
+//useEffect
+
+import {useEffect} from 'react';
+
+
+//Mouning
+useEffect(()=>{
+// code    // will call only once after the component mounts.
+},[])
+
+//Updating
+useEffect(()=>{
+// code    // will call every time when atleaset one of the depency state changes
+},[state1,state2,....])
+
+
+//Unmounting
+useEffect(()=>{
+  return ()=>{
+    //code // will execute this only before leaving the component
+  }
+},[])
+
+
+const timeInterval = setTimeout(() => {
+      this.setState({favoritecolor: "yellow"})
+}, 1000);
+
+clearInterval(timeInterval);
+
+
+
+
+
+

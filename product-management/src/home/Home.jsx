@@ -49,7 +49,7 @@ export function Home() {
         setShowError(error);
       });
   };
-
+  let timeInterval = null;
   // Mounting phase
   useEffect(() => {
     getProducts(null);
@@ -71,6 +71,7 @@ export function Home() {
 
   const filterProps = {
     selectedCategory,
+    productId,
     categories,
     onProductIdChange: handleProductIdChange,
     onCategoryChange: handleCategoryChange,
