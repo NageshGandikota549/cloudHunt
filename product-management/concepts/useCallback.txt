@@ -1,0 +1,8 @@
+--useCallback 
+
+It is a react hook used to memorize the function, which will helps in 
+optimizing the performance by preventing unncessary re-creation of functions.
+
+--used when we pass function as a props to child component
+
+--we should use Remo.memo in the child component to memorize the props

@@ -6,7 +6,7 @@ export const Filter = ({
   onCategoryChange,
 }) => {
   return (
-    <>
+      <>    
       <input type="number" value={productId} onChange={onProductIdChange} />
       <select onChange={onCategoryChange} value={selectedCategory}>
         <option value="">All Categories</option>
@@ -17,3 +17,4 @@ export const Filter = ({
     </>
   );
 };
+
