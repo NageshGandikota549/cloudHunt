@@ -1,0 +1,5 @@
+//useRef
+ 
+ 1.It is Used to access or manipulate the DOM elements directly
+ 2.Changes to ref value don't rerender the component, used to store component information
+  instead of using usestate

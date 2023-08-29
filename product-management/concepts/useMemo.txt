@@ -1,0 +1,4 @@
+//useMemo
+useMemo used to memorize the result of a function, helps to optimize the performance by 
+avoiding unncessary calculations.
+

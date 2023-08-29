@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import useRefDemo from './../useRefDemo/useRefDemo';
 
 export const Navbar = () => {
   return (
@@ -22,6 +23,12 @@ export const Navbar = () => {
       </div>
       <div className="item">
         <Link to={"/parentUseCallback"}>Usecallback Parent</Link>
+      </div>
+      <div className="item">
+        <Link to={"/useMemoDemo"}>useMemo</Link>
+      </div>
+      <div className="item">
+        <Link to={"/useRefDemo"}>useRefDemo</Link>
       </div>
     </div>
   );

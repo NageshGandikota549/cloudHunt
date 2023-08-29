@@ -7,6 +7,8 @@ import { Contact } from "./contact";
 import "./login/Login.css";
 import { Parent } from "./useContextDemo/Parent";
 import ParentComponent from "./useCallbackDemo/ParentComponent";
+import { UseMemoDemo } from "./useMemoDemo";
+import useRefDemo from "./useRefDemo/useRefDemo";
 
 export function App() {
   return (
@@ -20,6 +22,8 @@ export function App() {
           <Route path="contact" Component={Contact}></Route>
           <Route path="parent" Component={Parent}></Route>
           <Route path="parentUseCallback" Component={ParentComponent}></Route>
+          <Route path="useMemoDemo" Component={UseMemoDemo}></Route>
+          <Route path="useRefDemo" Component={useRefDemo}></Route>
           <Route path="/" exact Component={Home}></Route>
           <Route path="*" Component={Home}></Route>
         </Routes>
