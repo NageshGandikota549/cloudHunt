@@ -1,29 +1,30 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import "./Home.css";
-import { Filter } from "./components/filter";
+import { Filter, IFilterPops } from "./components/filter/Filter";
 
 const url = "https://fakestoreapi.com/products";
 
 export function Home() {
-  const [products, setProducts] = useState([]);
-  const [productId, setProductId] = useState(null);
-  const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [showError, setShowError] = useState("");
+  const [products, setProducts] = useState<any[]>([]);
+  const [productId, setProductId] = useState<string | null>(null);
+  const [categories, setCategories] = useState<string[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const [showError, setShowError] = useState<boolean>(false);
 
-  const handleProductIdChange = (event) => {
-    setProductId(event.target.value);
+  const handleProductIdChange = (value: string) => {
+    setProductId(value);
   };
 
-  const handleCategoryChange = (event) => {
-    setSelectedCategory(event.target.value);
+  const handleCategoryChange = (value: string) => {
+    setSelectedCategory(value);
   };
 
-  const getProducts = (productId) => {
+  const getProducts = (productId: string | null) => {
     // "-1" -- > -1
 
     if (productId !== null && parseInt(productId) <= 0) {
-      setShowError("internal server error...");
+      setShowError(true);
       return;
     }
 
@@ -35,10 +36,10 @@ export function Home() {
       .then((data) => {
         setShowError(false);
         if (categories.length === 0) {
-          let categoryList = data.map((x) => x.category);
+          let categoryList = data.map((x: any) => x.category);
 
           categoryList = categoryList.filter(
-            (x, idx) => categoryList.indexOf(x) === idx
+            (x: string, idx: number) => categoryList.indexOf(x) === idx
           );
           setCategories(categoryList);
         }
@@ -69,7 +70,7 @@ export function Home() {
     };
   }, []);
 
-  const filterProps = {
+  const filterProps: IFilterPops = {
     selectedCategory,
     productId,
     categories,
