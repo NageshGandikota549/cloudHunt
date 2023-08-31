@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
-import useRefDemo from './../useRefDemo/useRefDemo';
+import useRefDemo from "./../useRefDemo/useRefDemo";
 
 export const Navbar = () => {
   return (
@@ -29,6 +29,12 @@ export const Navbar = () => {
       </div>
       <div className="item">
         <Link to={"/useRefDemo"}>useRefDemo</Link>
+      </div>
+      <div className="item">
+        <Link to={"/customHook"}>customHook</Link>
+      </div>
+      <div className="item">
+        <Link to={"/products"}>Products</Link>
       </div>
     </div>
   );

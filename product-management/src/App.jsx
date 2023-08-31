@@ -9,6 +9,8 @@ import { Parent } from "./useContextDemo/Parent";
 import ParentComponent from "./useCallbackDemo/ParentComponent";
 import { UseMemoDemo } from "./useMemoDemo";
 import useRefDemo from "./useRefDemo/useRefDemo";
+import CounterComponent from './customHookDemo/CounterComponent';
+import ProductsDashBoard from "./customHookDemo/ProductsDashBoard";
 
 export function App() {
   return (
@@ -24,6 +26,8 @@ export function App() {
           <Route path="parentUseCallback" Component={ParentComponent}></Route>
           <Route path="useMemoDemo" Component={UseMemoDemo}></Route>
           <Route path="useRefDemo" Component={useRefDemo}></Route>
+          <Route path="customHook" Component={CounterComponent}></Route>
+          <Route path="products" Component={ProductsDashBoard}></Route>
           <Route path="/" exact Component={Home}></Route>
           <Route path="*" Component={Home}></Route>
         </Routes>
