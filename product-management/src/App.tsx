@@ -1,0 +1,65 @@
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
+import { Home } from "./home/Home";
+import React from "react";
+import UnAuthorized from "./un-authorized/UnAuthorized";
+import ProtectedRoute from "./shared/ProtectedRoute/ProtectedRoute";
+import { UseReducerDemo } from "./useReducerDemo/UseReducerDemo";
+import { Navbar } from "./navbar/Navbar";
+// import { Login } from "./login";
+// import { Home } from "./home";
+// import { Register } from "./register";
+// import { Contact } from "./contact";
+// import "./login/Login.css";
+// import { Parent } from "./useContextDemo/Parent";
+// import ParentComponent from "./useCallbackDemo/ParentComponent";
+// import { UseMemoDemo } from "./useMemoDemo";
+// import useRefDemo from "./useRefDemo/useRefDemo";
+// import CounterComponent from "./customHookDemo/CounterComponent";
+// import ProductsDashBoard from "./customHookDemo/ProductsDashBoard";
+
+export function App() {
+  return (
+    <div>
+      <BrowserRouter basename="/">
+        <Navbar />
+        <Routes>
+          <Route
+            path="home"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          ></Route>
+
+          <Route
+            path="userReducer"
+            element={
+              <ProtectedRoute>
+                <UseReducerDemo />
+              </ProtectedRoute>
+            }
+          ></Route>
+
+          {/* <Route path="register" Component={Register}></Route>
+          <Route path="contact" Component={Contact}></Route>
+          <Route path="parent" Component={Parent}></Route>
+          <Route path="parentUseCallback" Component={ParentComponent}></Route>
+          <Route path="useMemoDemo" Component={UseMemoDemo}></Route>
+          <Route path="useRefDemo" Component={useRefDemo}></Route>
+          <Route path="customHook" Component={CounterComponent}></Route>
+          <Route path="products" Component={ProductsDashBoard}></Route>
+          <Route path="/" exact Component={Home}></Route> */}
+          <Route path="*" Component={Home}></Route>
+          <Route path="unauthorized" Component={UnAuthorized}></Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}

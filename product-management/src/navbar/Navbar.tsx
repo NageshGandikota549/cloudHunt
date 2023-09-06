@@ -1,9 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import "./navbar.css";
-import useRefDemo from "./../useRefDemo/useRefDemo";
 
 export const Navbar = () => {
+  const params = useParams();
+  const id = params.id;
+
+  const location = useLocation();
+
+  // const handleViewClick = (id) => {
+  //   location.push("products/" + id);
+  // };
+
   return (
     <div className="navbar-conatiner">
       <div className="item">
@@ -34,8 +42,12 @@ export const Navbar = () => {
         <Link to={"/customHook"}>customHook</Link>
       </div>
       <div className="item">
-        <Link to={"/products"}>Products</Link>
+        <Link to={"/products/id"}>Products</Link>
       </div>
+      <div className="item">
+        <Link to={"/userReducer"}>useReducerDemo</Link>
+      </div>
+      {/* <button onClick={() => handleViewClick(123)}>view more details</button> */}
     </div>
   );
 };

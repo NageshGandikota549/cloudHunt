@@ -18,6 +18,8 @@ export const Filter: React.FC<IFilterPops> = ({
   return (
     <>
       <input
+        id="test"
+        data-testId="number-field"
         type="number"
         value={productId?.toString()}
         onChange={(event) => onProductIdChange(event.target.value)}
