@@ -21,14 +21,14 @@ export function Home() {
   };
 
   const getProducts = (productId: string | null) => {
-    // "-1" -- > -1
-
     if (productId !== null && parseInt(productId) <= 0) {
       setShowError(true);
       return;
     }
 
     const updatedURL = productId ? `${url}/${productId}` : url;
+    console.log("updatedURL", updatedURL);
+    
     fetch(updatedURL)
       .then((response) => {
         return response.json();
@@ -81,13 +81,6 @@ export function Home() {
   return (
     <div>
       <Filter {...filterProps} />
-      {/*       
-      <Filter
-        selectedCategory={selectedCategory}
-        categories={categories}
-        onProductIdChange={handleProductIdChange}
-        onCategoryChange={handleCategoryChange}
-      /> */}
 
       {!showError && (
         <table>
@@ -102,7 +95,7 @@ export function Home() {
           <tbody>
             {products.map((x) => {
               return (
-                <tr key={x.id}>
+                <tr data-testId="product-row" key={x.id}>
                   <td>{x.id}</td>
                   <td>{x.title}</td>
                   <td>{x.category}</td>
